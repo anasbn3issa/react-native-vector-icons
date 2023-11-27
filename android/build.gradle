@@ -22,11 +22,11 @@ if (isNewArchitectureEnabled()) {
 
 android {
     namespace = "com.oblador.vectoricons"
-    compileSdkVersion safeExtGet('compileSdkVersion', 31)
+    compileSdkVersion safeExtGet('compileSdkVersion', 33)
 
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 21)
-        targetSdkVersion safeExtGet('targetSdkVersion', 31)
+        targetSdkVersion safeExtGet('targetSdkVersion', 33)
         buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString())
     }
     sourceSets {
@@ -38,6 +38,10 @@ android {
             }
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
+
 }
 
 repositories {
